@@ -17,12 +17,14 @@ func main() {
 	var people []person
 	err := json.Unmarshal([]byte(jsonStr), &people)
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("Error converting JSON:", `json.Unmarshal([]byte(jsonStr), &people)`)
+		fmt.Println("jsonStr:", jsonStr)
+		fmt.Println("Error:", err)
 		return
 	}
 	fmt.Println(people)
 	for i, v := range people {
-		fmt.Println("Peron number", i)
+		fmt.Println("Person number", i)
 		fmt.Println("\t", v.First, v.Last, v.Age)
 	}
 }
