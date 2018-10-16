@@ -5,6 +5,7 @@ import (
 )
 
 type person struct {
+	title string
 	first string
 	last  string
 	age   int
@@ -12,6 +13,7 @@ type person struct {
 
 func main() {
 	p1 := person{
+		title: "Mr.",
 		first: "Mukul",
 		last:  "Debnath",
 		age:   32,
@@ -22,6 +24,7 @@ func main() {
 }
 
 func changeMe(p *person) {
+	p.title = "Unknown"
 	p.first = "First"
 	p.last = "Last"
 	p.age = 42
